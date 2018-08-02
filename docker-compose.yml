@@ -1,0 +1,4 @@
+version: '2.1'
+services:
+    browserstack:
+        image: dockerregprod01.news.newslimited.local/chaichakanw/robot-bs-bmp:stable
