@@ -6,13 +6,7 @@ export TTL
 export BS_ARGS
 export BS_KEY
 
-echo "BMP port is $BMP_PORT"
-echo "Port Range is $PORT_RANGE"
-echo "TTL is $TTL"
-
-/browsermob-proxy/bin/browsermob-proxy -port $BMP_PORT -proxyPortRange $PORT_RANGE -ttl $TTL
-
-wait_untill(){
+wait_until(){
         #waits untill the proxy server doesn't comes up
         while [ 1 -eq 1 ];
         do
@@ -24,7 +18,17 @@ wait_untill(){
         done
 }
 
+echo "BMP port is $BMP_PORT"
+echo "Port Range is $PORT_RANGE"
+echo "TTL is $TTL"
+
+/browsermob-proxy/bin/browsermob-proxy -port $BMP_PORT -proxyPortRange $PORT_RANGE -ttl $TTL
+
+wait_until
+
 echo "BrowserStack argument is $BS_ARGS"
 echo "BrowserStack key is $BS_KEY"
 
 /usr/local/bin/BrowserStackLocal $BS_ARGS $BS_KEY
+
+echo "BrowserStackLocal is starting..."
