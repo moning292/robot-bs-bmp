@@ -3,6 +3,8 @@
 export BMP_PORT
 export PORT_RANGE
 export TTL
+export BS_ARGS
+export BS_KEY
 
 echo "BMP port is $BMP_PORT"
 echo "Port Range is $PORT_RANGE"
@@ -22,4 +24,7 @@ wait_untill(){
         done
 }
 
-/usr/local/bin/BrowserStackLocal $ARGS $KEY
+echo "BrowserStack argument is $BS_ARGS"
+echo "BrowserStack key is $BS_KEY"
+
+/usr/local/bin/BrowserStackLocal $BS_ARGS $BS_KEY

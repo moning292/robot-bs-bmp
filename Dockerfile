@@ -1,5 +1,4 @@
 FROM debian
-MAINTAINER Worakorn Chaichakan "worakorn.chaichakan@news.com.au"
 
 ENV DEBIAN_FRONTEND noninteractive
 
@@ -20,6 +19,8 @@ RUN mv /browsermob-proxy-$BMP_VERSION /browsermob-proxy
 ENV BMP_PORT 9090
 ENV PORT_RANGE 39500-39999
 ENV TTL 600
+ENV BS_ARGS
+ENV BS_KEY
 
 # Install python, pip and Robot Framework required libraries        
 RUN pip install robotframework robotframework-selenium2library browsermob-proxy \
