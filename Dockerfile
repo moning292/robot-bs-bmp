@@ -35,7 +35,7 @@ RUN cd /usr/local/bin; wget https://www.browserstack.com/browserstack-local/Brow
 COPY scripts/start.sh /
 RUN chmod +x /start.sh
 
-ENV PATH $PATH:/usr/local/bin:/browsermob-proxy
+ENV PATH $PATH:/usr/local/bin:/browsermob-proxy/bin
 
 WORKDIR /home/ncg-automation
 
