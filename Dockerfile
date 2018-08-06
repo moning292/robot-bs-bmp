@@ -17,9 +17,10 @@ RUN mv /browsermob-proxy-$BMP_VERSION /browsermob-proxy
 
 # ENV VALUE
 ENV BMP_PORT 9090
-ENV PORT_RANGE 39500-39999
+ENV PORT_RANGE 39500-39510
 ENV TTL 600
-ENV BS_ARGS --v
+# ENV BS_ARGS --v
+ENV BS_ARGS "--v --local-proxy-host localhost --local-proxy-port 39500 --force --force-proxy --force-local"
 ENV BS_KEY "--key kNCypy7K78pW23hs9Lx3"
 
 # Install python, pip and Robot Framework required libraries        
@@ -33,6 +34,8 @@ RUN cd /usr/local/bin; wget https://www.browserstack.com/browserstack-local/Brow
 
 COPY scripts/start.sh /
 RUN chmod +x /start.sh
+
+ENV PATH $PATH:/usr/local/bin:/browsermob-proxy
 
 WORKDIR /home/ncg-automation
 
