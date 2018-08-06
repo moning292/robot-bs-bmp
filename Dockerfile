@@ -5,7 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # make sure the package repository is up to date
 RUN apt-get update && \
         apt-get upgrade -y && \
-        apt-get install -y wget curl ps unzip python python-pip bzip2 ca-certificates openjdk-8-jre-headless sudo
+        apt-get install -y wget curl procps unzip python python-pip bzip2 ca-certificates openjdk-8-jre-headless sudo
 
 # BrowserMob Proxy download and install
 ENV BMP_VERSION 2.1.4
